@@ -1,20 +1,8 @@
 # CoverageFailDemo
 
-**TODO: Add description**
+ExCoveralls doesn't seem to be considering each line in a `case` statement as relevant, which means coverage reports aren't always accurate. This project demonstrates this behaviour.
 
-## Installation
+After downloading the repo, run `mix deps.get` and then `mix coveralls`. You'll see that the tool reports a 100% coverage rate. However, the test only covers one branch of the `case` statement.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
-
-  1. Add coverage_fail_demo to your list of dependencies in `mix.exs`:
-
-        def deps do
-          [{:coverage_fail_demo, "~> 0.0.1"}]
-        end
-
-  2. Ensure coverage_fail_demo is started before your application:
-
-        def application do
-          [applications: [:coverage_fail_demo]]
-        end
-
+- Expected behaviour: 50% coverage
+- Actual behaviour: 100% coverage
